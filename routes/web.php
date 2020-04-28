@@ -11,11 +11,13 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/model', function () {
+// Route::get('/model', function () {
     //****active record
     // $products = \App\User::all(); //igual um select * from
 
@@ -88,5 +90,21 @@ Route::get('/model', function () {
     
     
     
-    return \App\User::all();
+    // return \App\User::all();
+// });
+
+//Route::post('admin/stores/store', 'Admin\\StoreController@store'); exemplo sem o prefix
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function(){
+
+    Route::prefix('stores')->name('stores.')->group(function(){
+        
+        Route::get('/', 'StoreController@index')->name('index');
+        Route::get('/create', 'StoreController@create')->name('create');
+        Route::post('/store', 'StoreController@store')->name('store');
+        Route::get('/{store}/edit', 'StoreController@edit')->name('edit');
+        Route::post('/update/{store}', 'StoreController@update')->name('update');
+        Route::get('/destroy/{store}', 'StoreController@destroy')->name('destroy');
+        //Route::post('admin/stores/store', 'Admin\\StoreController@store'); exemplo sem o prefix
+    });
 });
+
