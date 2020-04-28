@@ -27,25 +27,14 @@
             <input type="text" name="mobile_phone" id="" class="form-control">
             
         </div>
+
         <div>
             <label>slug</label>
             <input type="text" name="slug" id="" class="form-control">
             
         </div>
 
-        <div class="form-group">
-            <label>usuario</label>
-            <select name="user" id="" class="form-control">
-                @foreach ($users as $user)
-                    <option value="{{$user->id}}">{{$user->name}}</option>
-                @endforeach
-                
-            </select>
-            
-            
-        </div>
-        
-        <div>
+        <div style="margin-top:10px;">
             <button type="submit" class="btn btn-lg btn-success">Criar Loja</button>
         </div>
     

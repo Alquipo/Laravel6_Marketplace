@@ -18,10 +18,9 @@ class StoreController extends Controller
         return view('admin.stores.create', compact('users'));
     }
     public function store(Request $request){
-       $data = $request->all();
-
-       $user = \App\User::find($data['user']);
-       $store = $user->store()->create($data);
+        $data = $request->all();
+        $user = auth()->user();
+        $store = $user->store()->create($data);
 
         flash('Loja Criada com sucesso')->success();
         return redirect()->route('admin.stores.index');
