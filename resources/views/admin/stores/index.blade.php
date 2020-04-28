@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="{{route('admin.stores.create')}}" class="btn  btn-success">Criar loja</a>
+<a href="{{route('admin.stores.create')}}" class="btn  btn-success mb-2">Criar loja</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -18,7 +18,7 @@
                     <td>{{$store->name}}</td>
                     <td>
                         <div class="btn-group">
-                            <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-primary mr-1">Editar</a>
                              <form action="{{route('admin.stores.destroy', ['store' => $store->id])}}" method="post">
                             @csrf
                             @method("DELETE")

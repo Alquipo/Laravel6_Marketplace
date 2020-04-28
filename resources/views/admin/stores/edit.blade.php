@@ -34,10 +34,9 @@
         <input type="text" name="slug" id="" value="{{$store->slug}}" class="form-control">
         
     </div>
-
             
     <div>
-        <button type="submit" class="btn btn-lg btn-success">Atualizar Loja</button>
+        <button type="submit" class="btn btn-lg btn-success mt-2">Atualizar Loja</button>
     </div>
     
 </form>
